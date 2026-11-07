@@ -1201,7 +1201,9 @@ def build_vercel():
         if src.rstrip("/") == dst.rstrip("/") or src in seen:
             continue
         seen.add(src)
-        redirects.append({"source": src.rstrip("/"), "destination": dst,
+        # Με trailingSlash: true το Vercel κάνει πρώτα 308 στη μορφή με «/»
+        # και μετά ελέγχει τα redirects, οπότε η πηγή πρέπει να τελειώνει σε «/».
+        redirects.append({"source": src.rstrip("/") + "/", "destination": dst,
                           "permanent": True})
     redirects.insert(0, {
         "source": "/(.*)",

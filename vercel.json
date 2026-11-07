@@ -15,222 +15,222 @@
       "permanent": true
     },
     {
-      "source": "/%cf%80%cf%81%ce%bf%cf%86%ce%af%ce%bb",
+      "source": "/%cf%80%cf%81%ce%bf%cf%86%ce%af%ce%bb/",
       "destination": "/profil/",
       "permanent": true
     },
     {
-      "source": "/προφίλ",
+      "source": "/προφίλ/",
       "destination": "/profil/",
       "permanent": true
     },
     {
-      "source": "/%cf%87%cf%8e%cf%81%ce%bf%cf%82",
+      "source": "/%cf%87%cf%8e%cf%81%ce%bf%cf%82/",
       "destination": "/o-choros/",
       "permanent": true
     },
     {
-      "source": "/χώρος",
+      "source": "/χώρος/",
       "destination": "/o-choros/",
       "permanent": true
     },
     {
-      "source": "/contact",
+      "source": "/contact/",
       "destination": "/epikoinonia/",
       "permanent": true
     },
     {
-      "source": "/%cf%87%cf%81%ce%ae%cf%83%ce%b7-cookies",
+      "source": "/%cf%87%cf%81%ce%ae%cf%83%ce%b7-cookies/",
       "destination": "/cookies/",
       "permanent": true
     },
     {
-      "source": "/χρήση-cookies",
+      "source": "/χρήση-cookies/",
       "destination": "/cookies/",
       "permanent": true
     },
     {
-      "source": "/%ce%b4%ce%b5%ce%b4%ce%bf%ce%bc%ce%ad%ce%bd%ce%b1-%cf%80%cf%81%ce%bf%cf%83%cf%89%cf%80%ce%b9%ce%ba%ce%bf%cf%8d-%cf%87%ce%b1%cf%81%ce%b1%ce%ba%cf%84%ce%ae%cf%81%ce%b1",
+      "source": "/%ce%b4%ce%b5%ce%b4%ce%bf%ce%bc%ce%ad%ce%bd%ce%b1-%cf%80%cf%81%ce%bf%cf%83%cf%89%cf%80%ce%b9%ce%ba%ce%bf%cf%8d-%cf%87%ce%b1%cf%81%ce%b1%ce%ba%cf%84%ce%ae%cf%81%ce%b1/",
       "destination": "/prosopika-dedomena/",
       "permanent": true
     },
     {
-      "source": "/δεδομένα-προσωπικού-χαρακτήρα",
+      "source": "/δεδομένα-προσωπικού-χαρακτήρα/",
       "destination": "/prosopika-dedomena/",
       "permanent": true
     },
     {
-      "source": "/%cf%80%cf%81%ce%bf%cf%86%ce%af%ce%bb/%ce%bf%ce%b9%ce%ba%ce%bf%ce%bd%ce%bf%ce%bc%ce%b9%ce%ba%ce%ad%cf%82-%ce%ba%ce%b1%cf%84%ce%b1%cf%83%cf%84%ce%ac%cf%83%ce%b5%ce%b9%cf%82",
+      "source": "/%cf%80%cf%81%ce%bf%cf%86%ce%af%ce%bb/%ce%bf%ce%b9%ce%ba%ce%bf%ce%bd%ce%bf%ce%bc%ce%b9%ce%ba%ce%ad%cf%82-%ce%ba%ce%b1%cf%84%ce%b1%cf%83%cf%84%ce%ac%cf%83%ce%b5%ce%b9%cf%82/",
       "destination": "/profil/",
       "permanent": true
     },
     {
-      "source": "/prosfores",
+      "source": "/prosfores/",
       "destination": "/",
       "permanent": true
     },
     {
-      "source": "/medi-pearl",
+      "source": "/medi-pearl/",
       "destination": "/therapeies/",
       "permanent": true
     },
     {
-      "source": "/pearl-spa",
+      "source": "/pearl-spa/",
       "destination": "/therapeies/",
       "permanent": true
     },
     {
-      "source": "/medi-pearl/lipolaser",
+      "source": "/medi-pearl/lipolaser/",
       "destination": "/therapeies/lipolaser/",
       "permanent": true
     },
     {
-      "source": "/medi-pearl/rf",
+      "source": "/medi-pearl/rf/",
       "destination": "/therapeies/rf/",
       "permanent": true
     },
     {
-      "source": "/medi-pearl/hifu",
+      "source": "/medi-pearl/hifu/",
       "destination": "/therapeies/hifu/",
       "permanent": true
     },
     {
-      "source": "/medi-pearl/hydrafacial",
+      "source": "/medi-pearl/hydrafacial/",
       "destination": "/therapeies/hydrafacial/",
       "permanent": true
     },
     {
-      "source": "/medi-pearl/kryolipolysi",
+      "source": "/medi-pearl/kryolipolysi/",
       "destination": "/therapeies/kryolipolysi/",
       "permanent": true
     },
     {
-      "source": "/medi-pearl/laser-apotrixosi",
+      "source": "/medi-pearl/laser-apotrixosi/",
       "destination": "/therapeies/laser-apotrixosi/",
       "permanent": true
     },
     {
-      "source": "/medi-pearl/laser-%ce%b1%cf%80%ce%bf%cf%84%cf%81%ce%af%cf%87%cf%89%cf%83%ce%b7",
+      "source": "/medi-pearl/laser-%ce%b1%cf%80%ce%bf%cf%84%cf%81%ce%af%cf%87%cf%89%cf%83%ce%b7/",
       "destination": "/therapeies/laser-apotrixosi/",
       "permanent": true
     },
     {
-      "source": "/medi-pearl/laser-αποτρίχωση",
+      "source": "/medi-pearl/laser-αποτρίχωση/",
       "destination": "/therapeies/laser-apotrixosi/",
       "permanent": true
     },
     {
-      "source": "/medi-pearl/ximiko-peeling",
+      "source": "/medi-pearl/ximiko-peeling/",
       "destination": "/therapeies/peeling/",
       "permanent": true
     },
     {
-      "source": "/medi-pearl/%cf%87%ce%b7%ce%bc%ce%b9%ce%ba%cf%8c-peeling",
+      "source": "/medi-pearl/%cf%87%ce%b7%ce%bc%ce%b9%ce%ba%cf%8c-peeling/",
       "destination": "/therapeies/peeling/",
       "permanent": true
     },
     {
-      "source": "/medi-pearl/χημικό-peeling",
+      "source": "/medi-pearl/χημικό-peeling/",
       "destination": "/therapeies/peeling/",
       "permanent": true
     },
     {
-      "source": "/medi-pearl/mi-enesimi-mesotherapeia-btl",
+      "source": "/medi-pearl/mi-enesimi-mesotherapeia-btl/",
       "destination": "/therapeies/mi-enesimi-mesotherapeia-btl/",
       "permanent": true
     },
     {
-      "source": "/medi-pearl/%ce%bc%ce%b7-%ce%b5%ce%bd%ce%ad%cf%83%ce%b9%ce%bc%ce%b7-%ce%bc%ce%b5%cf%83%ce%bf%ce%b8%ce%b5%cf%81%ce%b1%cf%80%ce%b5%ce%af%ce%b1-btl",
+      "source": "/medi-pearl/%ce%bc%ce%b7-%ce%b5%ce%bd%ce%ad%cf%83%ce%b9%ce%bc%ce%b7-%ce%bc%ce%b5%cf%83%ce%bf%ce%b8%ce%b5%cf%81%ce%b1%cf%80%ce%b5%ce%af%ce%b1-btl/",
       "destination": "/therapeies/mi-enesimi-mesotherapeia-btl/",
       "permanent": true
     },
     {
-      "source": "/medi-pearl/μη-ενέσιμη-μεσοθεραπεία-btl",
+      "source": "/medi-pearl/μη-ενέσιμη-μεσοθεραπεία-btl/",
       "destination": "/therapeies/mi-enesimi-mesotherapeia-btl/",
       "permanent": true
     },
     {
-      "source": "/pearl-spa/aisthitiki-prosopou",
+      "source": "/pearl-spa/aisthitiki-prosopou/",
       "destination": "/therapeies/aisthitiki-prosopou/",
       "permanent": true
     },
     {
-      "source": "/pearl-spa/aisthitiki-somatos",
+      "source": "/pearl-spa/aisthitiki-somatos/",
       "destination": "/therapeies/aisthitiki-somatos/",
       "permanent": true
     },
     {
-      "source": "/pearl-spa/apotrixosi",
+      "source": "/pearl-spa/apotrixosi/",
       "destination": "/therapeies/apotrixosi/",
       "permanent": true
     },
     {
-      "source": "/pearl-spa/therapeies-spa",
+      "source": "/pearl-spa/therapeies-spa/",
       "destination": "/therapeies/therapeies-spa/",
       "permanent": true
     },
     {
-      "source": "/pearl-spa/diatrofi",
+      "source": "/pearl-spa/diatrofi/",
       "destination": "/therapeies/diatrofi/",
       "permanent": true
     },
     {
-      "source": "/medi-pearl/botox",
+      "source": "/medi-pearl/botox/",
       "destination": "/therapeies/",
       "permanent": true
     },
     {
-      "source": "/medi-pearl/fillers-yalouronikou",
+      "source": "/medi-pearl/fillers-yalouronikou/",
       "destination": "/therapeies/",
       "permanent": true
     },
     {
-      "source": "/medi-pearl/fillers-%cf%85%ce%b1%ce%bb%ce%bf%cf%85%cf%81%ce%bf%ce%bd%ce%b9%ce%ba%ce%bf%cf%8d",
+      "source": "/medi-pearl/fillers-%cf%85%ce%b1%ce%bb%ce%bf%cf%85%cf%81%ce%bf%ce%bd%ce%b9%ce%ba%ce%bf%cf%8d/",
       "destination": "/therapeies/",
       "permanent": true
     },
     {
-      "source": "/medi-pearl/fillers-υαλουρονικού",
+      "source": "/medi-pearl/fillers-υαλουρονικού/",
       "destination": "/therapeies/",
       "permanent": true
     },
     {
-      "source": "/medi-pearl/mesotherapeia-prp",
+      "source": "/medi-pearl/mesotherapeia-prp/",
       "destination": "/therapeies/",
       "permanent": true
     },
     {
-      "source": "/medi-pearl/%ce%b8%ce%b5%cf%81%ce%b1%cf%80%ce%b5%ce%af%ce%b1-prp",
+      "source": "/medi-pearl/%ce%b8%ce%b5%cf%81%ce%b1%cf%80%ce%b5%ce%af%ce%b1-prp/",
       "destination": "/therapeies/",
       "permanent": true
     },
     {
-      "source": "/medi-pearl/θεραπεία-prp",
+      "source": "/medi-pearl/θεραπεία-prp/",
       "destination": "/therapeies/",
       "permanent": true
     },
     {
-      "source": "/medi-pearl/nimata-thread-lift",
+      "source": "/medi-pearl/nimata-thread-lift/",
       "destination": "/therapeies/",
       "permanent": true
     },
     {
-      "source": "/medi-pearl/therapeia-trixoptosis",
+      "source": "/medi-pearl/therapeia-trixoptosis/",
       "destination": "/therapeies/",
       "permanent": true
     },
     {
-      "source": "/medi-pearl/dermatologia",
+      "source": "/medi-pearl/dermatologia/",
       "destination": "/therapeies/",
       "permanent": true
     },
     {
-      "source": "/medi-pearl/iatrikes-therapeies-prosopou",
+      "source": "/medi-pearl/iatrikes-therapeies-prosopou/",
       "destination": "/therapeies/",
       "permanent": true
     },
     {
-      "source": "/medi-pearl/%ce%ba%ce%b1%ce%bb%ce%bb%cf%85%ce%bd%cf%84%ce%b9%ce%ba%ce%ad%cf%82-%ce%b9%ce%b1%cf%84%cf%81%ce%b9%ce%ba%ce%ad%cf%82-%ce%b8%ce%b5%cf%81%ce%b1%cf%80%ce%b5%ce%af%ce%b5%cf%82-%cf%80%cf%81%ce%bf%cf%83",
+      "source": "/medi-pearl/%ce%ba%ce%b1%ce%bb%ce%bb%cf%85%ce%bd%cf%84%ce%b9%ce%ba%ce%ad%cf%82-%ce%b9%ce%b1%cf%84%cf%81%ce%b9%ce%ba%ce%ad%cf%82-%ce%b8%ce%b5%cf%81%ce%b1%cf%80%ce%b5%ce%af%ce%b5%cf%82-%cf%80%cf%81%ce%bf%cf%83/",
       "destination": "/therapeies/",
       "permanent": true
     }
