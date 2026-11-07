@@ -1206,53 +1206,44 @@ def build_vercel():
 
 
 def build_favicon():
-    """Ένα μαργαριτάρι: κύκλος με φίλντισι κλίση, σε μαύρο πεδίο."""
-    svg = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-<defs>
-<radialGradient id="p" cx="38%" cy="32%" r="72%">
-<stop offset="0" stop-color="#FBF7F6"/>
-<stop offset=".42" stop-color="#E6DDE0"/>
-<stop offset=".72" stop-color="#C9D2CE"/>
-<stop offset="1" stop-color="#BDB6C9"/>
-</radialGradient>
-</defs>
-<rect width="64" height="64" fill="#000"/>
-<circle cx="32" cy="32" r="19" fill="url(#p)"/>
-<ellipse cx="25" cy="24" rx="6" ry="4" fill="#fff" opacity=".55"
- transform="rotate(-28 25 24)"/>
-</svg>
-"""
+    """Το πράσινο «P» του λογότυπου, μόνο του, σε διάφανο φόντο."""
+    with open(os.path.join(BUILD, "pearl-logo.svg"), encoding="utf-8") as f:
+        logo = f.read()
+    green = re.search(r'<g fill="#85CD26">(.*?)</g>', logo, re.S).group(1)
+    d = re.search(r'<path d="([^"]+)"', green).group(1)
+    nums = [float(x) for x in re.findall(r"-?\d+\.?\d*", d)]
+    xs, ys = nums[0::2], nums[1::2]
+    x0, y0, x1, y1 = min(xs), min(ys), max(xs), max(ys)
+    w, h = x1 - x0, y1 - y0
+    side = max(w, h) * 1.12
+    vx = x0 - (side - w) / 2
+    vy = y0 - (side - h) / 2
+    svg = (f'<svg xmlns="http://www.w3.org/2000/svg" '
+           f'viewBox="{vx:.2f} {vy:.2f} {side:.2f} {side:.2f}">'
+           f'<path fill="#85CD26" d="{d}"/></svg>\n')
     write("favicon.svg", svg)
 
 
 def build_apple_icon():
-    """PNG 180×180 από το ίδιο μοτίβο με το favicon."""
+    """PNG 180×180: ολόκληρο το λογότυπο σε λευκό τετράγωνο."""
     try:
-        from PIL import Image, ImageDraw
+        from PIL import Image
     except Exception:
         return
+    src = Image.open(os.path.join(BUILD, "pearl-logo-1024.png")).convert("RGBA")
+    bg = Image.new("RGBA", src.size, (255, 255, 255, 255))
+    bg.alpha_composite(src)
+    im = bg.convert("RGB")
+    # κόψε το λευκό περιθώριο και ξαναβάλε σταθερό
+    bbox = Image.eval(im.convert("L"), lambda v: 255 - v).getbbox()
+    im = im.crop(bbox)
     n = 720
-    im = Image.new("RGB", (n, n), (0, 0, 0))
-    d = ImageDraw.Draw(im)
-    cx = cy = n / 2
-    r = n * 0.297
-    # φίλντισι κλίση με ομόκεντρους κύκλους
-    stops = [(0.00, (251, 247, 246)), (0.42, (230, 221, 224)),
-             (0.72, (201, 210, 206)), (1.00, (189, 182, 201))]
-    for i in range(int(r), 0, -1):
-        t = 1 - i / r
-        for k in range(len(stops) - 1):
-            a, ca = stops[k]
-            b, cb = stops[k + 1]
-            if a <= t <= b:
-                f = (t - a) / (b - a) if b > a else 0
-                col = tuple(round(ca[j] + (cb[j] - ca[j]) * f) for j in range(3))
-                break
-        else:
-            col = stops[-1][1]
-        ox, oy = cx - r * 0.24 * (i / r), cy - r * 0.36 * (i / r)
-        d.ellipse([ox - i, oy - i, ox + i, oy + i], fill=col)
-    im.resize((180, 180), Image.LANCZOS).save(
+    pad = 0.10
+    box = int(n * (1 - 2 * pad))
+    im.thumbnail((box, box), Image.LANCZOS)
+    canvas = Image.new("RGB", (n, n), (255, 255, 255))
+    canvas.paste(im, ((n - im.size[0]) // 2, (n - im.size[1]) // 2))
+    canvas.resize((180, 180), Image.LANCZOS).save(
         os.path.join(ROOT, "apple-touch-icon.png"), "PNG", optimize=True)
 
 
