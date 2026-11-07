@@ -284,7 +284,6 @@ def business_ld():
         },
         "geo": {"@type": "GeoCoordinates",
                 "latitude": C.GEO[0], "longitude": C.GEO[1]},
-        "areaServed": [{"@type": "Place", "name": a} for a in C.AREAS_SERVED],
         "sameAs": [C.FACEBOOK, C.INSTAGRAM],
         **({"makesOffer": [
             {"@type": "Offer", "name": o["title"],
@@ -424,10 +423,6 @@ def build_home(css, js):
   </div>
 </a>"""
 
-    areas = "".join(f"<li>{e(a)}</li>" for a in C.AREAS_SERVED)
-
-    strip = "".join(f"<span>{e(x)}</span>" for x in C.SPECIALTIES)
-
     doors = ""
     for d in C.DOORS:
         doors += f"""
@@ -487,10 +482,6 @@ def build_home(css, js):
     </div>
     <p class="hero__where rise rise--3">{e(C.STREET)} · {e(C.AREA)} {e(C.POSTAL)}</p>
   </div>
-</section>
-
-<section class="strip">
-  <div class="wrap"><div class="strip__row">{strip}</div></div>
 </section>
 
 <section class="sec">
@@ -566,22 +557,6 @@ def build_home(css, js):
           <div><dt>Η ομάδα</dt><dd>{e(C.TEAM_SHORT)}</dd></div>
         </dl>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="sec sec--shell sec--tight">
-  <div class="wrap">
-    <div class="sec__head">
-      <h2 class="display d-m">γλυκά <i>νερά</i></h2>
-      <p class="lede">Στη Λεωφόρο Λαυρίου, με εύκολη πρόσβαση από την Αττική Οδό
-      και στάθμευση στον δρόμο. Εξυπηρετούμε καθημερινά τα Μεσόγεια και τα
-      νότια προάστια.</p>
-    </div>
-    <ul class="areas">{areas}</ul>
-    <div class="btns btns--mid" style="margin-top:clamp(2rem,3.5vw,2.75rem)">
-      <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query={C.MAPS_Q}"
-         target="_blank" rel="noopener">{ICON_PIN}<span>Οδηγίες πρόσβασης</span></a>
     </div>
   </div>
 </section>
@@ -732,9 +707,7 @@ def build_service(s, css, js):
                 "url": C.SITE_URL + path,
                 "description": s["short"],
                 "image": og_url(s["img"]),
-                "provider": {"@id": C.SITE_URL + "/#business"},
-                "areaServed": [{"@type": "Place", "name": a}
-                               for a in C.AREAS_SERVED[:5]]},
+                "provider": {"@id": C.SITE_URL + "/#business"}},
            ),
            og_img=s["img"], priority="0.8", css=css, js=js)
 
