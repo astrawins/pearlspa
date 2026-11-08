@@ -182,7 +182,7 @@ def footer():
       <div>
         <span class="mark">{MARK}</span>
         <address>
-          <b>{e(C.STREET)}</b>
+          <b>{e(C.STREET)}</b>, {e(C.FLOOR)}<br>
           {e(C.AREA)} {e(C.POSTAL)}<br>
           <a href="tel:{C.PHONE_TEL}">{e(C.PHONE_TXT)}</a><br>
           <a href="mailto:{C.EMAIL}">{e(C.EMAIL)}</a>{hours}
@@ -195,7 +195,7 @@ def footer():
       {col_html}
     </div>
     <div class="foot__bot">
-      <span>© {date.today().year} {e(C.LEGAL)}</span>
+      <span>© {date.today().year} {e(C.LEGAL)} · ΑΦΜ {e(C.VAT)}</span>
       <span class="foot__legal">
         <a href="/cookies/">Cookies</a>
         <a href="/prosopika-dedomena/">Προσωπικά δεδομένα</a>
@@ -266,6 +266,8 @@ def business_ld():
         "@id": C.SITE_URL + "/#business",
         "name": C.BRAND,
         "legalName": C.LEGAL,
+        "vatID": "EL" + C.VAT,
+        "taxID": C.VAT,
         "url": C.SITE_URL + "/",
         "telephone": C.PHONE_TEL,
         "email": C.EMAIL,
@@ -273,7 +275,7 @@ def business_ld():
         "priceRange": "€€",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": C.STREET,
+            "streetAddress": f"{C.STREET}, {C.FLOOR}",
             "addressLocality": C.AREA,
             "postalCode": C.POSTAL,
             "addressRegion": C.REGION,
@@ -549,7 +551,7 @@ def build_home(css, js):
           αλλού.</p>
         </div>
         <dl class="facts">
-          <div><dt>Διεύθυνση</dt><dd>{e(C.STREET)}, {e(C.AREA)} {e(C.POSTAL)}</dd></div>
+          <div><dt>Διεύθυνση</dt><dd>{e(C.STREET)}, {e(C.FLOOR)}, {e(C.AREA)} {e(C.POSTAL)}</dd></div>
           <div><dt>Ραντεβού</dt><dd><a href="tel:{C.PHONE_TEL}">{e(C.PHONE_TXT)}</a></dd></div>
           <div><dt>Η ομάδα</dt><dd>{e(C.TEAM_SHORT)}</dd></div>
         </dl>
@@ -891,7 +893,7 @@ def build_choros(css, js):
       <p>Τι καλό είναι να ξέρετε πριν από το πρώτο σας ραντεβού.</p>
     </div>
     <dl class="facts" style="max-width:62ch;margin:0">
-      <div><dt>Διεύθυνση</dt><dd>{e(C.STREET)}, {e(C.AREA)} {e(C.POSTAL)}</dd></div>
+      <div><dt>Διεύθυνση</dt><dd>{e(C.STREET)}, {e(C.FLOOR)}, {e(C.AREA)} {e(C.POSTAL)}</dd></div>
       <div><dt>Στάθμευση</dt><dd>Ελεύθερη στάθμευση στον δρόμο, μπροστά από τον χώρο</dd></div>
       <div><dt>Πρόσβαση</dt><dd>Από την Αττική Οδό, έξοδος Παιανίας, και από τη Λεωφόρο Λαυρίου</dd></div>
       <div><dt>Ραντεβού</dt><dd><a href="tel:{C.PHONE_TEL}">{e(C.PHONE_TXT)}</a></dd></div>
@@ -955,7 +957,7 @@ def build_contact(css, js):
         <div class="card">
           <h3>Πού θα έρθετε</h3>
           <p style="margin:0">
-            {e(C.STREET)}<br>{e(C.AREA)}, ΤΚ {e(C.POSTAL)}
+            {e(C.STREET)}, {e(C.FLOOR)}<br>{e(C.AREA)}, ΤΚ {e(C.POSTAL)}
           </p>
           <p style="margin:.75rem 0 0">Ελεύθερη στάθμευση στον δρόμο. Από την
           Αττική Οδό, έξοδος Παιανίας.</p>
@@ -1046,7 +1048,7 @@ def build_legal(css, js):
         ("/prosopika-dedomena/", "Προσωπικά δεδομένα", """
 <h2>Υπεύθυνος επεξεργασίας</h2>
 <p>Υπεύθυνος επεξεργασίας των δεδομένων που συλλέγονται μέσω αυτού του ιστότοπου
-είναι η {legal}, με έδρα {street}, {area} {postal}. Για κάθε θέμα σχετικό με τα
+είναι η {legal} (ΑΦΜ {vat}), με έδρα {street}, {floor}, {area} {postal}. Για κάθε θέμα σχετικό με τα
 δεδομένα σας μπορείτε να επικοινωνείτε στο <a href="mailto:{email}">{email}</a>
 ή στο <a href="tel:{tel}">{phone}</a>.</p>
 
@@ -1096,7 +1098,8 @@ def build_legal(css, js):
 <p>Ο ιστότοπος λειτουργεί αποκλειστικά μέσω κρυπτογραφημένης σύνδεσης (HTTPS).
 Λαμβάνουμε εύλογα τεχνικά και οργανωτικά μέτρα για την προστασία των δεδομένων
 σας από μη εξουσιοδοτημένη πρόσβαση, απώλεια ή αλλοίωση.</p>
-""".format(legal=e(C.LEGAL), street=e(C.STREET), area=e(C.AREA),
+""".format(legal=e(C.LEGAL), vat=e(C.VAT), floor=e(C.FLOOR),
+           street=e(C.STREET), area=e(C.AREA),
            postal=e(C.POSTAL), email=C.EMAIL, tel=C.PHONE_TEL,
            phone=e(C.PHONE_TXT))),
     ]
@@ -1251,7 +1254,7 @@ def build_readme(css, js):
     n_pages = len(PAGES)
     write("README.md", f"""# pearlspa.gr
 
-Στατικό site για το **{C.BRAND}** ({C.LEGAL}), {C.STREET}, {C.AREA}.
+Στατικό site για το **{C.BRAND}** ({C.LEGAL}, ΑΦΜ {C.VAT}), {C.STREET}, {C.FLOOR}, {C.AREA}.
 
 ## Πώς χτίζεται
 
@@ -1288,20 +1291,16 @@ python3 _build/build.py    # κάθε φορά
    λέει παντού «τηλεφωνικά ραντεβού» και δεν δηλώνει `openingHours` στο
    structured data. Μόλις τις επιβεβαιώσει ο πελάτης, συμπλήρωσέ τη με τη μορφή
    που περιγράφεται στο σχόλιο και ξανατρέξε το build.
-2. **Επωνυμία εταιρείας.** Η `LEGAL` στο `content.py` είναι ακόμη η παλιά
-   («ΙΔΙΩΤΙΚΟ ΙΑΤΡΕΙΟ ΙΑΤΡΙΚΗ Ι.Κ.Ε.») και εμφανίζεται στο © του υποσέλιδου και
-   στη σελίδα προσωπικών δεδομένων. Αν άλλαξε με τη νέα λειτουργία, διόρθωσέ
-   την.
-3. **Συντεταγμένες.** Το `GEO` στο `content.py` είναι κατά προσέγγιση για τα
+2. **Συντεταγμένες.** Το `GEO` στο `content.py` είναι κατά προσέγγιση για τα
    Γλυκά Νερά. Πάρε τις ακριβείς από το Google Business Profile.
-4. **Φωτογραφίες.** Το πιο αδύναμο σημείο. Οι τωρινές είναι παλιό stock και
+3. **Φωτογραφίες.** Το πιο αδύναμο σημείο. Οι τωρινές είναι παλιό stock και
    φωτογραφίες κινητού, 600–1000 px — στέκονται μόνο επειδή περνούν από duotone
    και βρίσκονται κάτω από σκούρο πέπλο. Οι ζώνες πλήρους πλάτους (`hero-wide`,
    `band-*`) θέλουν πηγές τουλάχιστον 2000 px. Μια φωτογράφιση του χώρου και της
    ομάδας ανεβάζει το αποτέλεσμα πιο πολύ από οποιαδήποτε αλλαγή κώδικα —
    ρίξ’ τες στο `_build/src-img/`, ενημέρωσε το `ASSETS` στο `images.py` και
    ξανατρέξε.
-5. **Google Search Console.** Υπόβαλε το `sitemap.xml` και παρακολούθησε τις
+4. **Google Search Console.** Υπόβαλε το `sitemap.xml` και παρακολούθησε τις
    ανακατευθύνσεις από τα παλιά URL του WordPress (ορίζονται στο `REDIRECTS`).
 
 ## Η σχεδίαση
